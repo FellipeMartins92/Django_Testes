@@ -11,7 +11,10 @@
         {% for produto in produtos %}
             <li>
                 <strong>Descrição:</strong> {{ produto.Descricao }} <br>
-                <strong>Referência:</strong> {{ produto.Referencia }}
+                <strong>Referência:</strong> {{ produto.Referencia }} <br>
+                {% for categoria in produto.categorias.all %}
+                    <li>{{ categoria.Descricao }}</li>
+                {% endfor %}
             </li>
             <br>
         {% endfor %}
